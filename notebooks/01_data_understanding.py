@@ -26,3 +26,32 @@ print(df.columns.tolist())
 # Display statistical summary
 print("\nStatistical Summary:")
 print(df.describe())
+
+
+# =====================================
+# 3.2 Missing Values Analysis
+# =====================================
+
+print("\nMissing Values Analysis:")
+
+missing_values = df.isnull().sum()
+
+print(missing_values[missing_values > 0])
+
+# Calculate missing values percentage
+missing_percentage = (df.isnull().sum() / len(df)) * 100
+
+print("\nMissing Values Percentage:")
+print(missing_percentage[missing_percentage > 0])
+
+
+# =====================================
+# 3.3 Duplicate Records
+# =====================================
+
+print("\nDuplicate Records Analysis:")
+
+duplicate_count = df.duplicated().sum()
+
+print("Number of duplicate records:", duplicate_count)
+
